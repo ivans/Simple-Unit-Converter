@@ -30,8 +30,10 @@ public class SimpleUnitConverter extends ListActivity {
 	@Override
 	protected void onListItemClick(ListView l, View v, int position, long id) {
 		super.onListItemClick(l, v, position, id);
-		Log.d("aaa", "onListItemClick : " + l.getItemAtPosition(position));
+		PhysicalUnit pu = (PhysicalUnit) l.getItemAtPosition(position);
+		Log.d("aaa", "onListItemClick : " + pu);
 		Intent i = new Intent(this, UnitActivity.class);
+		i.putExtra("hr.ivan.unitconverter.unitname", pu.getName());
 		this.startActivity(i);
 	}
 
@@ -95,5 +97,14 @@ public class SimpleUnitConverter extends ListActivity {
 		public String toString() {
 			return name;
 		}
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 	}
 }
