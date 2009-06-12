@@ -7,6 +7,6 @@
 		android:paddingRight="2px" android:paddingTop="2px"
 		android:layout_height="wrap_content" android:src="@drawable/icon" />
 	<TextView android:id="@+id/unit_list_label"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"
-		android:textSize="22sp" />
+		android:layout_width="wrap_content" android:layout_height="fill_parent"
+		android:textSize="22sp" android:gravity="center_vertical"/>
 </LinearLayout>
