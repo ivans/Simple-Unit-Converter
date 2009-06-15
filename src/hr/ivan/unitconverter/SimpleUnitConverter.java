@@ -1,5 +1,8 @@
 package hr.ivan.unitconverter;
 
+import hr.ivan.units.PhysicalUnit;
+import hr.ivan.units.UnitsList;
+
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -18,12 +21,10 @@ public class SimpleUnitConverter extends ListActivity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		ArrayList<PhysicalUnit> items = new ArrayList<PhysicalUnit>();
-		items.add(new PhysicalUnit("Lenght"));
-		items.add(new PhysicalUnit("Time"));
-		items.add(new PhysicalUnit("Mass"));
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+
+		ArrayList<PhysicalUnit> items = UnitsList.getInstance();
 		setListAdapter(new UnitAdapter(this, items));
 	}
 
@@ -87,24 +88,4 @@ public class SimpleUnitConverter extends ListActivity {
 		}
 	}
 
-	class PhysicalUnit {
-		String name;
-
-		PhysicalUnit(String name) {
-			this.name = name;
-		}
-
-		public String toString() {
-			return name;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-	}
 }
